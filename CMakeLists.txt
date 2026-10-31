@@ -56,9 +56,13 @@ if((PLATFORM_WIN32 OR PLATFORM_LINUX OR PLATFORM_MACOS) AND GL_SUPPORTED)
     add_subdirectory(HLSL2GLSLConverter)
 endif()
 
-add_subdirectory(RenderStateNotation)
+# The parser generator pip-installs libclang and jinja2 while configuring.
+option(DILIGENT_NO_RENDER_STATE_NOTATION "Do not build Render State Notation (also disables the packager)" OFF)
+if(NOT DILIGENT_NO_RENDER_STATE_NOTATION)
+    add_subdirectory(RenderStateNotation)
+endif()
 
-if((PLATFORM_WIN32 OR PLATFORM_LINUX OR PLATFORM_MACOS) AND ARCHIVER_SUPPORTED AND NOT DILIGENT_NO_RENDER_STATE_PACKAGER)
+if((PLATFORM_WIN32 OR PLATFORM_LINUX OR PLATFORM_MACOS) AND ARCHIVER_SUPPORTED AND NOT DILIGENT_NO_RENDER_STATE_PACKAGER AND NOT DILIGENT_NO_RENDER_STATE_NOTATION)
     add_subdirectory(RenderStatePackager)
 endif()
 
