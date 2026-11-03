@@ -35,10 +35,10 @@
 #include <string>
 #include <utility>
 
-#include "DebugUtilities.hpp"
+#include "../../../DiligentCore/Platforms/Basic/interface/DebugUtilities.hpp"
 #include "GLTFLoader.hpp"
 #include "GLTFVertexDataConverter.hpp"
-#include "GraphicsAccessories.hpp"
+#include "../../../DiligentCore/Graphics/GraphicsAccessories/interface/GraphicsAccessories.hpp"
 
 namespace Diligent
 {

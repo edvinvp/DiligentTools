@@ -26,7 +26,7 @@
 
 #pragma once
 
-#include "GraphicsAccessories.hpp"
+#include "../../../DiligentCore/Graphics/GraphicsAccessories/interface/GraphicsAccessories.hpp"
 
 namespace Diligent
 {
